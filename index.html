@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список справ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="app__header">
+            <h1>Список справ</h1>
+            <p class="counter" id="counter">Усього: 0 · Не виконано: 0</p>
+        </header>
+
+        <form class="add-form" id="add-form" autocomplete="off">
+            <label for="task-input" class="visually-hidden">Нове завдання</label>
+            <input type="text" id="task-input" class="add-form__input"
+                   placeholder="Що потрібно зробити?" maxlength="200">
+            <button type="submit" class="btn btn--primary">Додати</button>
+        </form>
+        <p class="error" id="error" aria-live="polite"></p>
+
+        <nav class="filters" aria-label="Фільтр завдань">
+            <button type="button" class="filter is-active" data-filter="all">Всі</button>
+            <button type="button" class="filter" data-filter="active">Активні</button>
+            <button type="button" class="filter" data-filter="completed">Виконані</button>
+        </nav>
+
+        <ul class="task-list" id="task-list"></ul>
+        <p class="empty" id="empty">Завдань поки немає</p>
+
+        <footer class="app__footer">
+            <button type="button" class="btn btn--ghost" id="clear-completed">Очистити виконані</button>
+            <span class="hint">Подвійний клік по тексту — редагування</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
